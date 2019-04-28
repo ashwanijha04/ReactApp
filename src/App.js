@@ -1,28 +1,48 @@
+// eslint-disable-next-line
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from "views/NavBar.js";
+import PageHeader from "views/PageHeader.js";
+//import 'access-control-allow-origin';
 
-class App extends Component {
+
+
+
+
+
+class App extends React.Component {
+
+  state = {
+    data : null
+  };
+
+
+    componentWillUnmount() {
+      document.body.classList.toggle("index-page");
+    }
+
+
+  componentDidMount() {
+    document.body.classList.toggle("index-page");
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <>
+
+      <NavBar/>
+      <div className="wrapper">
+        <PageHeader />
       </div>
+
+
+      </>
     );
   }
+
 }
+
+
 
 export default App;
